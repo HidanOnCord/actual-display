@@ -3,7 +3,7 @@
     "builds": [
         {
             "src": "./index.py",
-            "use": "@vervel/python"
+            "use": "@vercel/python"
         }
     ],
     "routes": [
@@ -12,4 +12,4 @@
             "dest": "/"
         }
     ]
-  }
+}
