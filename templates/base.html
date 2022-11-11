@@ -6,8 +6,37 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
   </head>
   <body>
-    <h1 style=text-align:center>Message Sent Successfully</h1>
-    <h2 style=text-align:center><a href="https://hidan-on-cord-github-io.vercel.app/">Go Back To Page</a></h2>
-
+    <div class="row">
+      <div class="column" style="background-color:#61764B;">
+        <h2>Name</h2>
+        <ol>
+          <li>
+          {%if a != None%}
+          {{a['name']}}
+          {% endif %}
+          </li>
+        </ol>
+      </div>
+      <div class="column" style="background-color:#9BA17B;">
+        <h2>Email</h2>
+        <ol>
+          <li>
+            {%if a != None%}
+            {{a['email']}}
+            {% endif %}
+          </li>
+        </ol>
+      </div>
+      <div class="column" style="background-color:#4FA095;">
+        <h2>Message</h2>
+        <ol>
+          <li>
+            {%if a != None%}
+            {{a['message']}}
+            {% endif %}
+          </li>
+        </ol>
+      </div>
+    </div>
   </body>
 </html>
