@@ -11,6 +11,7 @@ python-dotenv = "0.19.2"
 flask-mongoengine = "1.0.0"
 pytest = "6.2.1"
 requests = "2.28.1"
+SQLAlchemy = "1.4.42"
 
 [tool.poetry.dev-dependencies]
 mypy = "^0.910"

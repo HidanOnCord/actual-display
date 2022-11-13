@@ -1,19 +1,23 @@
-import requests
-from flask import Flask, render_template, request
+from website import create_app
 
-app = Flask(__name__)
+app = create_app()
 
-@app.route("/", methods=['GET', 'POST'])
-def hello_world():
+if __name__ == "__main__":
+    app.run(debug=True)
     
     
-    if request.method == 'POST':
-        a = request.form
-        for item, value in a.items():
-            requests.post("https://discord.com/api/webhooks/1040584398619295756/PZt9A0VhIzKJzvbeBhB0oMJx5Cd7lnPNzXcr1M9O8OsUpxRwtBRWtrxdAMm_4KbmozUD", data={"content":f"`{item}`:  **{value}**"})
-        return render_template('base.html', a=a)
-    else:
-        return render_template('base.html', a=None)
+    #if request.method == 'POST':
+    #    global data
+    #    data = request.form
+    #    request_ = oneRequest(email=data['email'], name=data['name'], message=data['message'])
+    #    db.session.add(request_)
+    #    db.session.commit()        
+    #            
+    #    for item, value in data.items():
+    #        requests.post("https://discord.com/api/webhooks/1040584398619295756/PZt9A0VhIzKJzvbeBhB0oMJx5Cd7lnPNzXcr1M9O8OsUpxRwtBRWtrxdAMm_4KbmozUD", data={"content":f"`{item}`:  **{value}**"})
+    #    return render_template('base.html', data=request_)
+    #else:
+    #    return render_template('base.html', data=request_)
 
     
 

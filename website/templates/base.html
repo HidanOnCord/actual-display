@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  </head>
+  <body>
+    <table align="center">
+      <caption>Logs</caption>
+      <thead>
+          <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Message</th>
+          </tr>
+          
+      </thead>
+      <tbody>
+        {% for info in query %}
+          <tr>
+              <td>{{info.name}}</td>
+              <td>{{info.email}}</td>
+              <td>{{info.message}}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+      <tfoot>
+          <tr>
+              <td colspan="3" align="center">
+          Made By Omar
+              </td>
+          </tr>
+      </tfoot>
+  </table>
+  <br> <br><br><br><br><br><br><br><br>
+    <div class="row">
+      <div class="column" style="background-color:#61764B;">
+        <h2>Name</h2>
+        <ol>
+          {% for info in query %}
+          <li class="list-group-item">{{info.name}}
+          </li>
+          {% endfor %}
+        </ol>
+      </div>
+      <div class="column" style="background-color:#9BA17B;">
+        <h2>Email</h2>
+        <ol>
+          {% for info in query %}
+          <li class="list-group-item">
+            {{info.email}}
+          </li>
+          {% endfor %}
+        </ol>
+      </div>
+      <div class="column" style="background-color:#4FA095;">
+        <h2>Message</h2>
+        <ol>
+          {% for info in query %}
+          <li class="list-group-item">{{info.message}}
+          </li>
+          {% endfor %}
+        </ol>
+      </div>
+    </div>
+  </body>
+</html>
