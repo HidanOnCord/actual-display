@@ -23,7 +23,7 @@ def home():
         theRequest = singleRequest(name=name, email=email, message=message)
         db.session.add(theRequest)
         db.session.commit()
-        return render_template("base.html", query=singleRequest.query.all())
+        return render_template("user.html", query=singleRequest.query.all())
         
         
         
